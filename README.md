@@ -2,10 +2,13 @@
 
 ## Apuntes del Curso
 
-1. **Sesión 3:**
-    - **_Formatos de String:_** Para el ejemplo utilizo el 3000000.
+1. **Sesión 3: Introducción a Python**
 
-| **Método**            | **Sintaxis**     | **Resultado**| **Lo que hace**                                          |
+**-_Formatos de String:_**
+
+**|| Enfocada a números ||**
+
+| Método                | Sintaxis.        | Resultado.   | Lo que hace (3000000).                                   |
 |-----------------------|------------------|--------------|----------------------------------------------------------|
 | F-String (Moderno)    | f"{n:,}"         | 3,000,000    | Agrega comas de miles (automático).                      |
 | F-String + Decimales  | f"{n:,.2f}"      | 3,000,000.00 | Comas de miles y 2 decimales fijos.                      |
@@ -13,6 +16,69 @@
 | Operador % (Flotante) | "%2.3f" % n      | 3000000.000  | Convierte a decimal con 3 dígitos tras el punto.         |
 | Método .format()      | "{:,}".format(n) | 3,000,000    | Igual al f-string, pero funciona en Python viejo (2.7+). |
 | Locale (Regional)     | f"{n:n}"         | 3.000.000    | Usa el separador según tu país (ej. punto en España).    |
+
+**|| Enfocado a cadenas de texto ||**
+| Acción            | Sintaxis (F-String) | Resultado (con texto="Hola") | Descripción                                                |
+|-------------------|---------------------|------------------------------|------------------------------------------------------------|
+| Alinear Izquierda | f"\|{texto:<10}\|"  | \|Hola \|                    | Reserva 10 espacios y pega el texto a la izquierda.        |
+| Alinear Derecha   | f"\|{texto:>10}\|"  | \| Hola\|                    | Reserva 10 espacios y pega el texto a la derecha.          |
+| Centrar           | f"\|{texto:^10}\|"  | \| Hola \|                   | Centra el texto en el ancho total.                         |
+| Rellenar          | f"{texto:*^10}"     | ***Hola****                  | Rellena el espacio vacío con un carácter (en este caso *). |
+| Truncar (Cortar)  | f"{texto:.2}"       | Ho                           | Solo muestra los primeros "X" caracteres.                  |
+| Combinar          | f"{texto:*>10.3}"   | *******Hol                   | Reserva 10, rellena con * y corta a 3 letras.              |
+
+**-_Operadores:_**
+
+**|| Aritméticos ||**
+
+| Operador | Descripción      | Ejemplo (a=10, b=3) | Resultado |
+|----------|------------------|---------------------|-----------|
+| +        | Suma             | a + b               | 13        |
+| -        | Resta            | a - b               | 7         |
+| *        | Multiplicación   | a * b               | 30        |
+| /        | División (float) | a / b               | 3.333...  |
+| //       | División Entera  | a // b              | 3         |
+| %        | Módulo (residuo) | a % b               | 1         |
+| **       | Potencia         | a ** b              | 1000      |
+
+**|| Comparación ||**
+
+| Operador | Descripción       | Ejemplo        |
+|----------|-------------------|----------------|
+| ==       | Igual a           | 5 == 5 → True  |
+| !=       | Diferente de      | 5 != 3 → True  |
+| >        | Mayor que         | 5 > 10 → False |
+| <        | Menor que         | 5 < 10 → True  |
+| >=       | Mayor o igual que | 5 >= 5 → True  |
+| <=       | Menor o igual que | 5 <= 2 → False |
+
+**|| Lógicos ||**
+
+| Operador | Descripción                             | Ejemplo                    |
+|----------|-----------------------------------------|----------------------------|
+| and      | Devuelve True si ambos son ciertos      | (5 > 3) and (2 < 4) → True |
+| or       | Devuelve True si al menos uno es cierto | (5 > 8) or (2 < 4) → True  |
+| not      | Invierte el resultado (no es)           | not(5 > 3) → False         |
+
+
+**|| Asignación ||**
+
+| Operador             | Ejemplo                                       | Equivalente |
+|----------------------|-----------------------------------------------|-------------|
+| =                    | x = 5                                         | x = 5       |
+| +=                   | x += 3                                        | x = x + 3   |
+| -=                   | x -= 1                                        | x = x - 1   |
+| *=, /=, //=, %=, **= | Igual que arriba con su respectiva operación. |             |
+
+**|| Pertenencia e Identidad ||**
+
+| Operador | Descripción                              | Ejemplo                  |
+|----------|------------------------------------------|--------------------------|
+| in       | True si el valor está en la secuencia    | 'a' in 'hola' → True     |
+| not in   | True si el valor NO está en la secuencia | 'z' not in 'hola' → True |
+| is       | True si son el mismo objeto (identidad)  | a is b                   |
+| is not   | True si no son el mismo objeto           | a is not b               |
+
 
 2. **Ejercicios de Python**
     - Ejercicios con creación de variables
